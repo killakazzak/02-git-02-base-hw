@@ -1,159 +1,187 @@
-# Домашнее задание к занятию "`Git`" - `Тен Денис`
+# Домашнее задание к занятию "`Основы Git`" - `Тен Денис`
 
 
-### Инструкция по выполнению домашнего задания
+### Цель задания
 
-   1. Сделайте `fork` данного репозитория к себе в Github и переименуйте его по названию или номеру занятия, например, https://github.com/имя-вашего-репозитория/git-hw или  https://github.com/имя-вашего-репозитория/7-1-ansible-hw).
-   2. Выполните клонирование данного репозитория к себе на ПК с помощью команды `git clone`.
-   3. Выполните домашнее задание и заполните у себя локально этот файл README.md:
-      - впишите вверху название занятия и вашу фамилию и имя
-      - в каждом задании добавьте решение в требуемом виде (текст/код/скриншоты/ссылка)
-      - для корректного добавления скриншотов воспользуйтесь [инструкцией "Как вставить скриншот в шаблон с решением](https://github.com/netology-code/sys-pattern-homework/blob/main/screen-instruction.md)
-      - при оформлении используйте возможности языка разметки md (коротко об этом можно посмотреть в [инструкции  по MarkDown](https://github.com/netology-code/sys-pattern-homework/blob/main/md-instruction.md))
-   4. После завершения работы над домашним заданием сделайте коммит (`git commit -m "comment"`) и отправьте его на Github (`git push origin`);
-   5. Для проверки домашнего задания преподавателем в личном кабинете прикрепите и отправьте ссылку на решение в виде md-файла в вашем Github.
-   6. Любые вопросы по выполнению заданий спрашивайте в чате учебной группы и/или в разделе “Вопросы по заданию” в личном кабинете.
+В результате выполнения задания вы:
+
+* научитесь работать с Git, как с распределённой системой контроля версий; 
+* сможете создавать и настраивать репозиторий для работы в GitHub, GitLab и Bitbucket; 
+* попрактикуетесь работать с тегами;
+* поработаете с Git при помощи визуального редактора.
+
+### Чеклист готовности к домашнему заданию
+
+1. Установлена консольная утилита для работы с Git.
+2. Есть возможность зарегистрироваться на GitHub, GitLab.
+3. Регистрация на Bitbucket не является обязательной. 
+
+
+### Инструкция к заданию
+
+1. В личном кабинете отправьте на проверку ссылки на ваши репозитории.
+2. Любые вопросы по решению задач задавайте в чате учебной группы.
+
+------
+
+## Задание 1. Знакомимся с GitLab и Bitbucket 
+
+Из-за сложности доступа к Bitbucket в работе достаточно использовать два репозитория: GitHub и GitLab.
+
+Иногда при работе с Git-репозиториями надо настроить свой локальный репозиторий так, чтобы можно было 
+отправлять и принимать изменения из нескольких удалённых репозиториев. 
+
+Это может понадобиться при работе над проектом с открытым исходным кодом, если автор проекта не даёт права на запись в основной репозиторий.
+
+Также некоторые распределённые команды используют такой принцип работы, когда каждый разработчик имеет свой репозиторий, а в основной репозиторий пушатся только конечные результаты 
+работы над задачами. 
+
+### GitLab
+
+Создадим аккаунт в GitLab, если у вас его ещё нет:
+
+1. GitLab. Для [регистрации](https://gitlab.com/users/sign_up)  можно использовать аккаунт Google, GitHub и другие. 
+1. После регистрации или авторизации в GitLab создайте новый проект, нажав на ссылку `Create a projet`. 
+Желательно назвать также, как и в GitHub — `devops-netology` и `visibility level`, выбрать `Public`.
+1. Галочку `Initialize repository with a README` лучше не ставить, чтобы не пришлось разрешать конфликты.
+1. Если вы зарегистрировались при помощи аккаунта в другой системе и не указали пароль, то увидите сообщение:
+`You won't be able to pull or push project code via HTTPS until you set a password on your account`. 
+Тогда перейдите [по ссылке](https://gitlab.com/profile/password/edit) из этого сообщения и задайте пароль. 
+Если вы уже умеете пользоваться SSH-ключами, то воспользуйтесь этой возможностью (подробнее про SSH мы поговорим в следующем учебном блоке).
+1. Перейдите на страницу созданного вами репозитория, URL будет примерно такой:
+https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагаемые варианты для начала работы в репозитории в секции
+`Command line instructions`. 
+1. Запомните вывод команды `git remote -v`.
+1. Из-за того, что это будет наш дополнительный репозиторий, ни один вариант из перечисленных в инструкции (на странице 
+вновь созданного репозитория) нам не подходит. Поэтому добавляем этот репозиторий, как дополнительный `remote`, к созданному
+репозиторию в рамках предыдущего домашнего задания:
+`git remote add gitlab https://gitlab.com/YOUR_LOGIN/devops-netology.git`.
+1. Отправьте изменения в новый удалённый репозиторий `git push -u gitlab main`.
+1. Обратите внимание, как изменился результат работы команды `git remote -v`.
+
+#### Как изменить видимость репозитория в  GitLab — сделать его публичным 
+
+* На верхней панели выберите «Меню» -> «Проекты» и найдите свой проект.
+* На левой боковой панели выберите «Настройки» -> «Основные».
+* Разверните раздел «Видимость» -> «Функции проекта» -> «Разрешения».
+* Измените видимость проекта на Public.
+* Нажмите «Сохранить изменения».
+
+### Bitbucket* (задание со звёздочкой) 
+
+Это самостоятельное задание, его выполнение необязательно.
+____
+
+Теперь необходимо проделать всё то же самое с [Bitbucket](https://bitbucket.org/). 
+
+1. Обратите внимание, что репозиторий должен быть публичным — отключите галочку `private repository` при создании репозитория.
+1. На вопрос `Include a README?` отвечайте отказом. 
+1. В отличии от GitHub и GitLab в Bitbucket репозиторий должен принадлежать проекту, поэтому во время создания репозитория 
+надо создать и проект, который можно назвать, например, `netology`.
+1. Аналогично GitLab на странице вновь созданного проекта выберите `https`, чтобы получить ссылку, и добавьте этот репозиторий, как 
+`git remote add bitbucket ...`.
+1. Обратите внимание, как изменился результат работы команды `git remote -v`.
+
+Если всё проделано правильно, то результат команды `git remote -v` должен быть следующий:
+
+```bash
+$ git remote -v
+bitbucket https://andreyborue@bitbucket.org/andreyborue/devops-netology.git (fetch)
+bitbucket https://andreyborue@bitbucket.org/andreyborue/devops-netology.git (push)
+gitlab	  https://gitlab.com/andrey.borue/devops-netology.git (fetch)
+gitlab	  https://gitlab.com/andrey.borue/devops-netology.git (push)
+origin	  https://github.com/andrey-borue/devops-netology.git (fetch)
+origin	  https://github.com/andrey-borue/devops-netology.git (push)
+```
+
+Дополнительно можете добавить удалённые репозитории по `ssh`, тогда результат будет примерно такой:
+
+```bash
+git remote -v
+bitbucket	git@bitbucket.org:andreyborue/devops-netology.git (fetch)
+bitbucket	git@bitbucket.org:andreyborue/devops-netology.git (push)
+bitbucket-https	https://andreyborue@bitbucket.org/andreyborue/devops-netology.git (fetch)
+bitbucket-https	https://andreyborue@bitbucket.org/andreyborue/devops-netology.git (push)
+gitlab	git@gitlab.com:andrey.borue/devops-netology.git (fetch)
+gitlab	git@gitlab.com:andrey.borue/devops-netology.git (push)
+gitlab-https	https://gitlab.com/andrey.borue/devops-netology.git (fetch)
+gitlab-https	https://gitlab.com/andrey.borue/devops-netology.git (push)
+origin	git@github.com:andrey-borue/devops-netology.git (fetch)
+origin	git@github.com:andrey-borue/devops-netology.git (push)
+origin-https	https://github.com/andrey-borue/devops-netology.git (fetch)
+origin-https	https://github.com/andrey-borue/devops-netology.git (push)
+```
+
+Выполните push локальной ветки `main` в новые репозитории. 
+
+Подсказка: `git push -u gitlab main`. На этом этапе история коммитов во всех трёх репозиториях должна совпадать. 
+
+## Задание 2. Теги
+
+Представьте ситуацию, когда в коде была обнаружена ошибка — надо вернуться на предыдущую версию кода,
+исправить её и выложить исправленный код в продакшн. Мы никуда не будем выкладывать код, но пометим некоторые коммиты тегами и создадим от них ветки. 
+
+1. Создайте легковестный тег `v0.0` на HEAD-коммите и запуште его во все три добавленных на предыдущем этапе `upstream`.
+1. Аналогично создайте аннотированный тег `v0.1`.
+1. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
+    * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
+    * в GitLab — https://gitlab.com/YOUR_ACCOUNT/devops-netology/-/tags;
+    * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
+
+## Задание 3. Ветки 
+
+Давайте посмотрим, как будет выглядеть история коммитов при создании веток. 
+
+1. Переключитесь обратно на ветку `main`, которая должна быть связана с веткой `main` репозитория на `github`.
+1. Посмотрите лог коммитов и найдите хеш коммита с названием `Prepare to delete and move`, который был создан в пределах предыдущего домашнего задания. 
+1. Выполните `git checkout` по хешу найденного коммита. 
+1. Создайте новую ветку `fix`, базируясь на этом коммите `git switch -c fix`.
+1. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
+1. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/YOUR_ACCOUNT/devops-netology/network. 
+1. Теперь измените содержание файла `README.md`, добавив новую строчку.
+1. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
+и как изменится вывод команды `git log`.
+
+## Задание 4. Упрощаем себе жизнь
+
+Попробуем поработь с Git при помощи визуального редактора. 
+
+1. В используемой IDE PyCharm откройте визуальный редактор работы с Git, находящийся в меню View -> Tool Windows -> Git.
+1. Измените какой-нибудь файл, и он сразу появится на вкладке `Local Changes`, отсюда можно выполнить коммит, нажав на кнопку внизу этого диалога. 
+1. Элементы управления для работы с Git будут выглядеть примерно так:
+
+   ![Работа с гитом](img/ide-git-01.jpg)
    
-Желаем успехов в выполнении домашнего задания!
-   
-### Дополнительные материалы, которые могут быть полезны для выполнения задания
+1. Попробуйте выполнить пару коммитов, используя IDE. 
 
-1. [Руководство по оформлению Markdown файлов](https://gist.github.com/Jekins/2bf2d0638163f1294637#Code)
+[По ссылке](https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html) можно найти справочную информацию по визуальному интерфейсу. 
 
----
+Если вверху экрана выбрать свою операционную систему, можно посмотреть горячие клавиши для работы с Git. 
+Подробней о визуальном интерфейсе мы расскажем на одной из следующих лекций.
 
-### Задание 1
+*В качестве результата работы по всем заданиям приложите ссылки на ваши репозитории в GitHub, GitLab и Bitbucket*.  
+ 
+----
 
-#### Создание репозитория
-![Создание репозитория](https://github.com/killakazzak/8-1-git-hw/blob/main/img/2024-02-28_16-32-21.jpg)
+### Правила приёма домашнего задания
 
-```
-git clone https://github.com/killakazzak/netology.git
-```
-![(https://github.com/killakazzak/8-1-git-hw/blob/main/img/1.jpg)](https://github.com/killakazzak/8-1-git-hw/blob/main/img/1.png)
-```
-git config --global user.name "Denis Ten"
-git config --global user.email "denis.a.ten@gmail.com"
-git status
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/2.png)
-```
-echo "Hello World!" >> README.md
-git status
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/3.png)
-```
-git diff
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/4.png)
-
-```
-git add README.md
-git diff --staged
-git status
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/6.png)
-```
-git commit -m 'First commit'
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/7.png)
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/8.png)
-```
-git remote set-url origin https://killakazzak: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@github.com/killakazzak/netology.git
-git push origin main
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/9.png)
-
-[Ссылка на commit](https://github.com/killakazzak/netology/commit/22f3d2506c1b15c3ab6f0682a188c405f8e54892)
-
----
-
-### Задание 2
-
-```
-touch .gitignore
-git status
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/21.png)
-```
-git add .gitignore
-git status
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/22.png)
-```
-echo "*.pyc" >> .gitignore && echo "cache/" >> .gitignore
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/23.png)
-```
-git add .gitignore
-git commit -m "Second Commit"
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/24.png)
-```
-git push origin main
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/25.png)
-
-[Ссылка на README.md](https://github.com/killakazzak/netology/blob/0d2269d19d0a4587a9e5c471208812acfdc84ecc/README.md)
-
-### Задание 3
-```
-git branch dev
-git checkout dev
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/31.png)
-```
-echo "Всем привет!" > test.sh
-git add test.sh
-git commit -m "Commit message"
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/32.png)
-```
-git checkout main
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/33.png)
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/34.png)
-
-```
-git merge dev
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/35.png)
-```
-git pull
-git push
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/36.png)
-
-[Ссылка на граф](https://github.com/killakazzak/netology/network)
-### Задание 4
-```
-git branch conflict
-git checkout conflict
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/41.png)
-```
-git add test.sh
-git commit -m "conflict commit"
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/42.png)
-```
-git push origin conflict
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/43.png)
-```
-git add test.sh
-git commit -m "commit temp"
-git push origin main
-git merge conflict
-git add test.sh
-git commit -m "Resolved conflict in test.sh"
-git push origin main
-```
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/44.png)
-![](https://github.com/killakazzak/8-1-git-hw/blob/main/img/45.png)
-
-[Ссылка на файл test.sh](https://github.com/killakazzak/netology/blob/main/test.sh)
+В личном кабинете отправлены ссылки на ваши репозитории.
 
 
+### Критерии оценки
 
+Зачёт:
 
+* выполнены все задания;
+* ответы даны в развёрнутой форме;
+* приложены соответствующие скриншоты и файлы проекта;
+* в выполненных заданиях нет противоречий и нарушения логики.
+
+На доработку:
+
+* задание выполнено частично или не выполнено вообще;
+* в логике выполнения заданий есть противоречия и существенные недостатки.  
+ 
+Обязательными являются задачи без звёздочки. Их выполнение необходимо для получения зачёта и диплома о профессиональной переподготовке.
+
+Задачи со звёздочкой (*) являются дополнительными или задачами повышенной сложности. Они необязательные, но их выполнение поможет лучше разобраться в теме.
