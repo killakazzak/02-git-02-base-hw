@@ -67,6 +67,14 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 * Измените видимость проекта на Public.
 * Нажмите «Сохранить изменения».
 
+```bash
+git remote add gitlab https://devops-netology:{access-token}@gitlab.com/denis.a.ten/devops-netology.git
+git push gitlab main
+```
+
+![image](https://github.com/user-attachments/assets/68bd1757-36bd-4709-b6d0-b847102e3f88)
+
+
 ### Bitbucket* (задание со звёздочкой) 
 
 Это самостоятельное задание, его выполнение необязательно.
@@ -116,6 +124,9 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 
 Подсказка: `git push -u gitlab main`. На этом этапе история коммитов во всех трёх репозиториях должна совпадать. 
 
+
+
+
 ## Задание 2. Теги
 
 Представьте ситуацию, когда в коде была обнаружена ошибка — надо вернуться на предыдущую версию кода,
@@ -127,6 +138,11 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
     * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
     * в GitLab — https://gitlab.com/YOUR_ACCOUNT/devops-netology/-/tags;
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
+
+## Решение Задание 2. Теги
+
+![image](https://github.com/user-attachments/assets/2220a878-7a9e-429c-b3a7-f54c105e50bc)
+
 
 ## Задание 3. Ветки 
 
