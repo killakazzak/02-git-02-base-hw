@@ -145,7 +145,14 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 
 ## Решение Задание 2. Теги
 
-![image](https://github.com/user-attachments/assets/2220a878-7a9e-429c-b3a7-f54c105e50bc)
+![image](https://github.com/user-attachments/assets/1c8c2a03-701f-476d-9f59-4454bd04b616)
+
+![image](https://github.com/user-attachments/assets/0ed367f3-9622-4b72-9ac8-26e36e91d61a)
+
+
+
+![image](https://github.com/user-attachments/assets/1f46f39b-44ae-4a0d-9657-f963d4f846eb)
+
 
 
 ## Задание 3. Ветки 
