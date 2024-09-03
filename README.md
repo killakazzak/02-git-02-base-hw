@@ -124,6 +124,10 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 
 Подсказка: `git push -u gitlab main`. На этом этапе история коммитов во всех трёх репозиториях должна совпадать. 
 
+![image](https://github.com/user-attachments/assets/a109d5dc-c0af-4eeb-9201-6c8a9d187071)
+
+![image](https://github.com/user-attachments/assets/85990048-69cf-4819-a1d8-99f1caa7be89)
+
 
 
 
