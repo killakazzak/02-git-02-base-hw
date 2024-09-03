@@ -180,6 +180,20 @@ git checkout f7045b7
 ![image](https://github.com/user-attachments/assets/73f73066-3263-4799-9758-a1ba19c1168c)
 
 
+```bash
+git switch -c fix
+```
+![image](https://github.com/user-attachments/assets/d9a03cb1-33b8-4672-a353-9fb303603d8c)
+
+```bash
+git push -u origin fix
+```
+![image](https://github.com/user-attachments/assets/05c81fe3-21ad-412b-825b-594d19ffc101)
+
+
+
+
+
 ## Задание 4. Упрощаем себе жизнь
 
 Попробуем поработь с Git при помощи визуального редактора. 
