@@ -202,6 +202,12 @@ git push
 ![image](https://github.com/user-attachments/assets/e0c11685-eb7e-4afc-bada-0506298f4f9e)
 
 
+![image](https://github.com/user-attachments/assets/9e338550-c91b-4960-a677-ade874d75e6e)
+
+```bash
+git log --oneline
+```
+![image](https://github.com/user-attachments/assets/a50e22da-c531-4dd5-87da-dc297c252fd1)
 
 
 
