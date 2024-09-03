@@ -169,6 +169,14 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 1. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
 и как изменится вывод команды `git log`.
 
+
+```bash
+git checkout main
+git log --oneline
+git checkout f7045b7
+```
+![image](https://github.com/user-attachments/assets/c3825a15-8805-445a-bbc1-4e38165924b9)
+
 ## Задание 4. Упрощаем себе жизнь
 
 Попробуем поработь с Git при помощи визуального редактора. 
