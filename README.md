@@ -194,6 +194,15 @@ git push -u origin fix
 
 ![image](https://github.com/user-attachments/assets/3648714e-00f3-425d-aad2-697c947d16e6)
 
+```bash
+git add README.md
+git commit -m "Добавлена новая строка в README.md"
+git push
+```
+![image](https://github.com/user-attachments/assets/e0c11685-eb7e-4afc-bada-0506298f4f9e)
+
+
+
 
 
 ## Задание 4. Упрощаем себе жизнь
