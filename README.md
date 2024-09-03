@@ -169,6 +169,7 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 1. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
 и как изменится вывод команды `git log`.
 
+## Решение Задание 3. Ветки 
 
 ```bash
 git checkout main
@@ -191,6 +192,7 @@ git push -u origin fix
 ![image](https://github.com/user-attachments/assets/05c81fe3-21ad-412b-825b-594d19ffc101)
 
 
+![image](https://github.com/user-attachments/assets/3648714e-00f3-425d-aad2-697c947d16e6)
 
 
 
