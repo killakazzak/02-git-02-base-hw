@@ -177,6 +177,9 @@ git checkout f7045b7
 ```
 ![image](https://github.com/user-attachments/assets/c3825a15-8805-445a-bbc1-4e38165924b9)
 
+![image](https://github.com/user-attachments/assets/73f73066-3263-4799-9758-a1ba19c1168c)
+
+
 ## Задание 4. Упрощаем себе жизнь
 
 Попробуем поработь с Git при помощи визуального редактора. 
